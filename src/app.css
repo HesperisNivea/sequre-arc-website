@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+
+
+@theme{
+    
+    --font-*: initial;
+    --font-sans: "Lato", "Karla", sans-serif;
+    --font-primary: "Lato", sans-serif;
+    --font-secondary: "Karla", sans-serif;
+}
