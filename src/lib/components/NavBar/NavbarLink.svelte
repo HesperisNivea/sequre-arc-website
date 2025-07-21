@@ -8,11 +8,11 @@
 </script>
 
 <div
-	class="group rounded-sm px-2 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-indigo-400 hover:bg-indigo-600/25 hover:shadow-lg"
+	class="hover:border-delftblue-600/50 hover:bg-delftblue-400/10 group rounded-sm border border-transparent px-2 py-2 transition-all duration-200 ease-out"
 >
 	<a
 		{href}
-		class="whitespace-nowrap text-lg transition-all duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-indigo-300"
+		class="group-hover:text-delftblue-100 whitespace-nowrap text-lg transition-all duration-200 ease-out"
 	>
 		{title}
 	</a>

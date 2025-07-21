@@ -7,4 +7,24 @@
     --font-sans: "Lato", "Karla", sans-serif;
     --font-primary: "Lato", sans-serif;
     --font-secondary: "Karla", sans-serif;
+
+    /* Color Palette */
+    --color-russianviolet: #462255ff;
+    --color-icablue: #8cebe8ff;
+    --color-aquamarine: #8cebb9ff;
+    --color-jordyblue: #8cbeebff;
+
+
+    --color-delftblue: #313B72ff;
+    --color-delftblue-100: #edeff7;
+    --color-delftblue-200: #c9cee8;
+    --color-delftblue-300: #a6aed9;
+    --color-delftblue-400: #828dc9;
+    --color-delftblue-500: #5e6dba;
+    --color-delftblue-600: #4553a1;
+    --color-delftblue-700: #36417d;
+    --color-delftblue-800: #262e59;
+    --color-delftblue-900: #171c36;
+
+
 }

@@ -1,9 +1,12 @@
 <script lang="ts">
 	import SubNavbar from '../SubNavMenu/SubNavbar.svelte';
 	import NavbarLink from './NavbarLink.svelte';
+	import { onMount } from 'svelte';
 
 	let mobileMenuOpen = $state(false);
 	let activeDropdown = $state<string | null>(null);
+	let scrollY = $state(0);
+	let navbarOpacity = $state(0.2);
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
@@ -16,9 +19,37 @@
 	function closeDropdowns() {
 		activeDropdown = null;
 	}
+
+	function updateNavbarOpacity() {
+		// Calculate opacity based on scroll position
+		// At scroll 0: opacity 0.2 (20%)
+		// At scroll 100px+: opacity 0.9 (90%)
+		const maxScroll = 100;
+		const minOpacity = 0.2;
+		const maxOpacity = 0.9;
+
+		const progress = Math.min(scrollY / maxScroll, 1);
+		navbarOpacity = minOpacity + (maxOpacity - minOpacity) * progress;
+	}
+
+	onMount(() => {
+		const handleScroll = () => {
+			scrollY = window.scrollY;
+			updateNavbarOpacity();
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
-<header class="relative bg-gray-900/50">
+<header
+	class="fixed left-0 right-0 top-0 z-50 transition-all duration-300"
+	style="background-color: rgba(49, 59, 114, {navbarOpacity})"
+>
 	<div class="container mx-auto px-4 py-6">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
@@ -34,10 +65,15 @@
 					</li>
 					<li class="group relative">
 						<button
-							class="cursor-pointer text-lg transition-colors duration-200 hover:text-gray-300"
+							class="hover:border-delftblue-600/50 hover:bg-delftblue-400/10 cursor-pointer rounded-sm border border-transparent px-2 py-2 text-lg transition-all duration-200 ease-out"
 							onclick={() => toggleDropdown('products')}
 						>
-							Usługi
+							Usługi <img
+								src="/icons/chevron-down.svg"
+								alt="Dropdown Arrow"
+								class="inline h-4 w-4 pl-1 brightness-0 invert saturate-0 filter"
+								style="vertical-align: middle;"
+							/>
 						</button>
 						<div
 							class="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 transform opacity-0 transition-all duration-200 ease-in-out group-hover:visible group-hover:opacity-100 {activeDropdown ===
@@ -79,7 +115,9 @@
 
 			<!-- Kontakt (Desktop) -->
 			<div class="hidden lg:block">
-				<a href="#" class="text-lg transition-colors duration-200 hover:text-gray-300">Kontakt</a>
+				<a href="#" class="text-lg text-white transition-colors duration-200 hover:text-gray-300"
+					>Kontakt</a
+				>
 			</div>
 
 			<!-- Mobile Menu Button -->
@@ -109,14 +147,27 @@
 
 		<!-- Mobile Navigation -->
 		<div class="lg:hidden {mobileMenuOpen ? 'block' : 'hidden'} mt-4">
-			<nav class="rounded-lg bg-gray-800 p-4">
+			<nav class="bg-delftblue rounded-lg p-4">
 				<ul class="space-y-2">
 					<li>
+						<a
+							href="#"
+							class="hover:bg-delftblue-600 block rounded px-3 py-2 text-white transition-colors duration-200"
+							>Strona Główna</a
+						>
+					</li>
+					<li>
 						<button
-							class="w-full rounded px-3 py-2 text-left text-white transition-colors duration-200 hover:bg-gray-700"
+							class="hover:hover:bg-delftblue-600 w-full rounded px-3 py-2 text-left text-white transition-colors duration-200"
 							onclick={() => toggleDropdown('mobile-products')}
 						>
 							Usługi
+							<img
+								src="/icons/chevron-down.svg"
+								alt="Dropdown Arrow"
+								class="inline h-4 w-4 pl-1 brightness-0 invert saturate-0 filter"
+								style="vertical-align: middle;"
+							/>
 						</button>
 						{#if activeDropdown === 'mobile-products'}
 							<div class="ml-4 mt-2 space-y-2">
@@ -158,21 +209,15 @@
 					<li>
 						<a
 							href="#"
-							class="block whitespace-nowrap rounded px-3 py-2 text-white transition-colors duration-200 hover:bg-gray-700"
+							class="hover:hover:bg-delftblue-600 block whitespace-nowrap rounded px-3 py-2 text-white transition-colors duration-200"
 							>O nas</a
 						>
 					</li>
+
 					<li>
 						<a
 							href="#"
-							class="block rounded px-3 py-2 text-white transition-colors duration-200 hover:bg-gray-700"
-							>Strona Główna</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="block whitespace-nowrap rounded px-3 py-2 text-white transition-colors duration-200 hover:bg-gray-700"
+							class="hover:hover:bg-delftblue-600 block whitespace-nowrap rounded px-3 py-2 text-white transition-colors duration-200"
 							>Kontakt</a
 						>
 					</li>
