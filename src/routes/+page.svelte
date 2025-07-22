@@ -7,39 +7,50 @@
 			onClick: () => {},
 			title: 'Cyberbezpieczeństwo',
 			active: false,
-			cardTitle: '',
-			cardContent: '',
-			cardImage: ''
+			cardTitle: 'Cyberbezpieczeństwo',
+			cardContent:
+				'Zapewniamy najwyższy poziom cyberbezpieczeństwa, chroniąc Twoje dane przed zagrożeniami cyfrowego świata.',
+			cardImage: '/images/max-petrunin-8wLRzTPtwAA-unsplash.jpg'
 		},
 		{
 			ariaLabel: 'Infrastruktura IT dla biznesu',
 			onClick: () => {},
 			title: 'Infrastruktura IT dla biznesu',
 			active: false,
-			cardTitle: '',
-			cardContent: '',
-			cardImage: ''
+			cardTitle: 'Infrastruktura IT dla biznesu',
+			cardContent:
+				'Wdrażamy i dostosowujemy środowisko IT dla Twojej firmy. Wykorzystaj pełny potencjał Microsoft 365 lub Google Workspace.',
+			cardImage: '/images/shubham-dhage-cIwzPYs-_Mk-unsplash.jpg'
 		},
 		{
 			ariaLabel: 'Automatyzacja i AI',
 			onClick: () => {},
 			title: 'Automatyzacja & AI',
 			active: false,
-			cardTitle: '',
-			cardContent: '',
-			cardImage: ''
+			cardTitle: 'Automatyzacja & AI',
+			cardContent:
+				'Pomagamy uwolnić pełny potencjał AI dla Twojej firmy i wprowadzamy automatymtayzacje procesów. Przyspiesz procesy i zyskaj przewagę nad konkurencją.',
+			cardImage: 'images/logan-voss-clMol3QrDzU-unsplash.jpg'
 		}
 	];
 
-	let activeCardIndex = $state(null); // Default to the first card
-	let activeCardContent = $state({
+	let activeCardIndex = null; // Default to the first card
+
+	let activeCardContent = {
 		title: 'Cyberbezpieczeństwo',
 		content:
-			'Zapewniamy najwyższy poziom cyberbezpieczeństwa, chroniąc Twoje dane przed zagrożeniami cyfrowego świata.'
-	});
+			'Zapewniamy najwyższy poziom cyberbezpieczeństwa, chroniąc Twoje dane przed zagrożeniami cyfrowego świata.',
+		image: '/images/max-petrunin-8wLRzTPtwAA-unsplash.jpg'
+	};
 
 	const changeActiveCard = (index) => {
 		activeCardIndex = index;
+
+		activeCardContent = {
+			title: buttons[index].cardTitle,
+			content: buttons[index].cardContent,
+			image: buttons[index].cardImage
+		};
 	};
 </script>
 
@@ -161,25 +172,33 @@
 			</div>
 		</div>
 	</section>
-	<section class="px-4 py-20">
+	<section class="relative bg-gradient-to-tr from-gray-50 via-white to-blue-50 px-4 py-20">
+		<!-- Background decorative elements -->
 		<!-- Background decorative elements -->
 		<div class="absolute inset-0 overflow-hidden">
-			<div class="bg-aquamarine/10 absolute right-20 top-10 h-32 w-32 rounded-full blur-2xl"></div>
-			<div class="absolute bottom-20 left-10 h-24 w-24 rounded-full bg-white/5 blur-xl"></div>
-			<div class="bg-aquamarine/5 absolute right-1/3 top-1/2 h-40 w-40 rounded-full blur-3xl"></div>
+			<div
+				class="bg-aquamarine/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl"
+			></div>
+			<div class="bg-delftblue/10 absolute -left-10 -top-10 h-32 w-32 rounded-full blur-2xl"></div>
 		</div>
 
 		<div
-			class="from-delftblue-600 via-delftblue-700 to-delftblue-900 container relative z-10 mx-auto overflow-hidden rounded-sm bg-gradient-to-br"
+			class="from-delftblue-600 via-delftblue-700 to-delftblue-900 container relative z-10 mx-auto overflow-hidden rounded-lg bg-gradient-to-br md:rounded-xl"
 		>
-			<div class="grid grid-cols-1 items-center gap-12 px-11 py-6 lg:grid-cols-2">
+			<div
+				class="grid grid-cols-1 items-stretch gap-0 p-4 md:p-6 lg:grid-cols-2 lg:gap-12 lg:px-11"
+			>
 				<!-- Left side - Expertise categories -->
-				<div class="space-y-8 px-4 py-11">
-					<div class="mb-12">
-						<h2 class="text-aquamarine mb-4 text-4xl font-bold md:text-5xl">Nasze kompetencje</h2>
-						<div class="from-aquamarine h-1 w-24 rounded-full bg-gradient-to-r to-white"></div>
+				<div class="space-y-6 py-6 md:px-4 md:py-11 lg:space-y-8">
+					<div class="mb-8 md:mb-12">
+						<h2 class="text-aquamarine mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+							Nasze kompetencje
+						</h2>
+						<div
+							class="from-aquamarine h-1 w-20 rounded-full bg-gradient-to-r to-white md:w-24"
+						></div>
 					</div>
-					<div class="space-y-4">
+					<div class="space-y-3 md:space-y-4">
 						{#each buttons as button, index}
 							<TransparentButton
 								ariaLabel={button.ariaLabel}
@@ -192,15 +211,23 @@
 				</div>
 
 				<!-- Right side - Content area with floating elements -->
-				<div class="h-full py-8">
+				<div class="py-3 md:py-8">
 					<!-- Main content card -->
-					<div class="from-aquamarine/70 to-aquamarine h-full rounded-sm bg-gradient-to-br p-8">
+					<div class="bg-aquamarine-100 h-full min-h-[400px] rounded-lg p-6 shadow-2xl md:p-8">
 						<!-- Content -->
 						<div class="">
-							<image class=" w-32 pb-4" src="/images/checkIfsquareshasabackground.png" />
+							<div class="mb-4 overflow-hidden rounded-lg md:mb-6">
+								<img
+									class="h-40 w-full object-cover md:h-60"
+									src={activeCardContent.image}
+									alt="Kompetencje"
+								/>
+							</div>
 
-							<h3 class="text-delftblue mb-4 text-2xl font-bold">{activeCardContent.title}</h3>
-							<p class="text-delftblue/90 font-['Karla'] leading-relaxed">
+							<h3 class="text-delftblue mb-3 text-xl font-bold md:mb-4 md:text-2xl">
+								{activeCardContent.title}
+							</h3>
+							<p class="text-delftblue font-['Karla'] text-base leading-relaxed md:text-lg">
 								{activeCardContent.content}
 							</p>
 						</div>

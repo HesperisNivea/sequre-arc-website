@@ -11,7 +11,7 @@
     /* Color Palette */
     --color-russianviolet: #462255ff;
     --color-icablue: #8cebe8ff;
-    --color-aquamarine: #8cebb9ff;
+    
     --color-jordyblue: #8cbeebff;
 
 
@@ -26,5 +26,17 @@
     --color-delftblue-800: #262e59;
     --color-delftblue-900: #171c36;
 
+
+    --color-aquamarine: #8cebb9ff;
+
+    --color-aquamarine-100: #e9fbf2;
+    --color-aquamarine-200: #bef4d7;
+    --color-aquamarine-300: #92ecbd;
+    --color-aquamarine-400: #67e5a2;
+    --color-aquamarine-500: #3cdd88;
+    --color-aquamarine-600: #22c36f;
+    --color-aquamarine-700: #1a9856;
+    --color-aquamarine-800: #136d3d;
+    --color-aquamarine-900: #0b4125;
 
 }
