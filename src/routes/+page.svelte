@@ -174,7 +174,6 @@
 	</section>
 	<section class="relative bg-gradient-to-tr from-gray-50 via-white to-blue-50 px-4 py-20">
 		<!-- Background decorative elements -->
-		<!-- Background decorative elements -->
 		<div class="absolute inset-0 overflow-hidden">
 			<div
 				class="bg-aquamarine/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl"
@@ -232,6 +231,35 @@
 							</p>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section
+		class="from-aquamarine-500 via-aquamarine-600 to-delftblue-500 relative bg-gradient-to-tr px-4 py-20"
+	>
+		<div class="container relative z-10 mx-auto">
+			<h2 class="mb-4 text-4xl font-bold text-white md:text-5xl">Co zyskasz?</h2>
+
+			<!-- Benefits Grid -->
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<!-- Benefit 1 - Łatwe skalowanie -->
+			</div>
+
+			<!-- Call to Action -->
+			<div class="mt-16 text-center">
+				<div class="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
+					<h3 class="mb-4 text-2xl font-bold text-white md:text-3xl">
+						Gotowy na transformację cyfrową?
+					</h3>
+					<p class="mb-6 text-lg text-white/90">
+						Porozmawiaj z naszymi ekspertami i odkryj możliwości dla Twojej firmy.
+					</p>
+					<button
+						class="text-delftblue transform rounded-lg bg-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:bg-gray-100"
+					>
+						Skontaktuj się z nami
+					</button>
 				</div>
 			</div>
 		</div>
