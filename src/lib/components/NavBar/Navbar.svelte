@@ -1,4 +1,5 @@
 <script lang="ts">
+	import TransparentButton from '../../../routes/TransparentButton.svelte';
 	import SubNavbar from '../SubNavMenu/SubNavbar.svelte';
 	import NavbarLink from './NavbarLink.svelte';
 	import { onMount } from 'svelte';
@@ -115,9 +116,7 @@
 
 			<!-- Kontakt (Desktop) -->
 			<div class="hidden lg:block">
-				<a href="#" class="text-lg text-white transition-colors duration-200 hover:text-gray-300"
-					>Kontakt</a
-				>
+				<TransparentButton title="Kontakt" size="small"></TransparentButton>
 			</div>
 
 			<!-- Mobile Menu Button -->
