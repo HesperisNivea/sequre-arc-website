@@ -238,25 +238,228 @@
 	<section
 		class="from-aquamarine-500 via-aquamarine-600 to-delftblue-500 relative bg-gradient-to-tr px-4 py-20"
 	>
-		<div class="container relative z-10 mx-auto">
-			<h2 class="mb-4 text-4xl font-bold text-white md:text-5xl">Co zyskasz?</h2>
+		<div class="container relative z-10 mx-auto text-center">
+			<div class="mb-16">
+				<p class="pb-3 font-['Karla'] text-xl font-bold text-white">NASZE USŁUGI</p>
+				<h2 class="pb-6 text-4xl font-bold text-white md:text-4xl">
+					Bogaty wybór usług IT, dostosowanych do Twoich potrzeb
+				</h2>
+				<p class="font-['Karla'] text-lg text-white/90">
+					Od cyberbezpieczeństwa po automatyzację procesów - oferujemy kompleksowe rozwiązania IT,
+					które pomogą Twojej firmie osiągnąć sukces.
+				</p>
+			</div>
 
 			<!-- Benefits Grid -->
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-				<!-- Benefit 1 - Łatwe skalowanie -->
-			</div>
+				<!-- Benefit 1 - Result -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Środowisko szyte na miarę
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						Accurate results are our top priority, ensuring you always have reliable information at
+						your fingertips.
+					</p>
+				</div>
 
-			<!-- Call to Action -->
-			<div class="mt-16 text-center">
-				<div class="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-					<h3 class="mb-4 text-2xl font-bold text-white md:text-3xl">
+				<!-- Benefit 2 - Quality -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V18m-7-8a2 2 0 01-2-2V6a2 2 0 012-2h2.343M11 7L9 5l2-2"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Zabezpieczone dane
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						We are committed to providing high-quality products and services that exceed your
+						expectations.
+					</p>
+				</div>
+
+				<!-- Benefit 3 - Product -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Odporność na cyberzagrożenia
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						Experience the difference of our feature-rich product that offers everything you
+						requires and many more.
+					</p>
+				</div>
+
+				<!-- Benefit 4 - Sales -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Optymalizacja kosztów
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						Experience the difference of our personalized sales approach, where you are always our
+						top priority.
+					</p>
+				</div>
+
+				<!-- Benefit 5 - Onboarding -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Zwiększona produktywność
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						Our onboarding process is designed to be simple and intuitive, so you can start using
+						our platform right away.
+					</p>
+				</div>
+
+				<!-- Benefit 6 - Support -->
+				<div
+					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+				>
+					<div class="mb-6 flex justify-center">
+						<div class="rounded-full bg-white/20 p-4">
+							<svg
+								class="h-12 w-12 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+								/>
+							</svg>
+						</div>
+					</div>
+					<h3 class="mb-4 text-center text-xl font-bold text-white md:text-2xl">
+						Łatwe skalowanie
+					</h3>
+					<p class="text-center font-['Karla'] leading-relaxed text-white/90">
+						Our commitment to exceptional support ensures that you receive the assistance you need,
+						whenever you need it.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 px-4 py-20">
+		<!-- Background decorative elements -->
+		<div class="absolute inset-0 overflow-hidden">
+			<div
+				class="bg-aquamarine/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl"
+			></div>
+			<div
+				class="bg-delftblue/10 absolute -bottom-10 -left-10 h-32 w-32 rounded-full blur-2xl"
+			></div>
+		</div>
+
+		<!-- Call to Action -->
+		<div class="container relative z-10 mx-auto">
+			<div class="mx-auto max-w-4xl text-center">
+				<div
+					class="from-delftblue-600 via-delftblue-700 to-delftblue-900 overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-2xl md:p-12"
+				>
+					<h3 class="mb-6 text-3xl font-bold text-white md:text-4xl">
 						Gotowy na transformację cyfrową?
 					</h3>
-					<p class="mb-6 text-lg text-white/90">
-						Porozmawiaj z naszymi ekspertami i odkryj możliwości dla Twojej firmy.
+					<p class="mb-8 font-['Karla'] text-lg leading-relaxed text-white/90 md:text-xl">
+						Porozmawiaj z naszymi ekspertami i odkryj możliwości dla Twojej firmy. Razem stworzymy
+						bezpieczne i nowoczesne środowisko IT.
 					</p>
 					<button
-						class="text-delftblue transform rounded-lg bg-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:bg-gray-100"
+						class="from-aquamarine-600 to-aquamarine-700 text-shadow-lg hover:to-aquamarine-400 hover:from-aquamarine-500 transform rounded-lg bg-gradient-to-r px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:px-10 md:py-4"
 					>
 						Skontaktuj się z nami
 					</button>
