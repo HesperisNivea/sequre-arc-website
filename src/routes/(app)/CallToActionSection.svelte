@@ -130,7 +130,7 @@
 			<!-- Right side - CTA Button -->
 			<div class="flex justify-start">
 				<button
-					class="bg-russianviolet hover:border-russianviolet hover:text-russianviolet hover:shadow-1xl group flex items-center gap-3 rounded-full px-8 py-4 font-['Karla'] text-lg text-white shadow-xl transition-all duration-100 hover:border-2 hover:bg-white/10"
+					class="bg-russianviolet hover:border-russianviolet hover:text-russianviolet hover:shadow-1xl group flex items-center gap-3 rounded-full px-8 py-4 font-['Karla'] text-lg font-[700] text-white shadow-xl transition-all duration-100 hover:border-2 hover:bg-white/60"
 				>
 					Skontaktuj się z nami
 					<svg

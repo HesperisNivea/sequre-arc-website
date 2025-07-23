@@ -1,5 +1,9 @@
 <script>
+	import CallToActionSection from './(app)/CallToActionSection.svelte';
+	import OurServivesSection from './(app)/OurServivesSection.svelte';
 	import TransparentButton from './TransparentButton.svelte';
+	import { cards } from './(app)/util';
+	import Footer from './(app)/Footer.svelte';
 
 	let buttons = [
 		{
@@ -86,9 +90,13 @@
 
 			<div class="relative z-10">
 				<div class="mb-16 text-center">
-					<h2 class="text-delftblue mb-4 text-4xl font-bold md:text-5xl">Dlaczego my?</h2>
+					<div class="mb-6">
+						<p class="text-delftblue pb-3 font-['Karla'] text-lg font-bold">CO NAS WYRÓŻNIA</p>
+						<h2 class="text-delftblue text-4xl font-bold md:text-4xl">Nasze wartości</h2>
+					</div>
+					<!-- <h2 class="text-delftblue mb-4 text-4xl font-bold md:text-5xl">Dlaczego my?</h2> -->
 					<div
-						class="from-aquamarine to-delftblue mx-auto h-1 w-24 rounded-full bg-gradient-to-r"
+						class="from-aquamarine to-delftblue w-50 mx-auto h-1 rounded-full bg-gradient-to-r"
 					></div>
 				</div>
 
@@ -101,7 +109,7 @@
 						></div>
 						<div class="relative z-10">
 							<div class="mb-6 flex items-center">
-								<img src="/images/square..png" alt="Bezpieczeństwo" class="h-16" />
+								<img src="/images/square..png" alt="Bezpieczeństwo" class="h-25" />
 							</div>
 							<h3
 								class="text-delftblue group-hover:text-aquamarine mb-3 text-xl font-bold transition-colors duration-300"
@@ -125,7 +133,7 @@
 						></div>
 						<div class="relative z-10">
 							<div class="mb-6 flex items-center">
-								<img src="/images/hex2.png" alt="Elastyczność" class="h-16" />
+								<img src="/images/hex2.png" alt="Elastyczność" class="h-25" />
 							</div>
 							<h3
 								class="text-delftblue group-hover:text-aquamarine mb-3 text-xl font-bold transition-colors duration-300"
@@ -152,7 +160,7 @@
 								<img
 									src="/images/checkIfsquareshasabackground.png"
 									alt="Doświadczenie"
-									class="h-16"
+									class="h-25"
 								/>
 							</div>
 							<h3
@@ -238,21 +246,19 @@
 	<section
 		class="from-aquamarine-500 via-aquamarine-600 to-delftblue-500 relative bg-gradient-to-tr px-4 py-20"
 	>
-		<div class="container relative z-10 mx-auto text-center">
-			<div class="mb-16">
-				<p class="pb-3 font-['Karla'] text-xl font-bold text-white">NASZE USŁUGI</p>
-				<h2 class="pb-6 text-4xl font-bold text-white md:text-4xl">
-					Bogaty wybór usług IT, dostosowanych do Twoich potrzeb
-				</h2>
-				<p class="font-['Karla'] text-lg text-white/90">
-					Od cyberbezpieczeństwa po automatyzację procesów - oferujemy kompleksowe rozwiązania IT,
-					które pomogą Twojej firmie osiągnąć sukces.
-				</p>
-			</div>
-
+		<div class="container relative z-10 mx-auto">
 			<!-- Benefits Grid -->
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 				<!-- Benefit 1 - Result -->
+				<div class="mb-16 pe-6 md:col-span-2">
+					<h2 class="pb-6 text-4xl font-bold text-white md:text-4xl">
+						CO ZYSKUJESZ, <br /> DZIEKI WSPÓŁPRACY Z NAMI
+					</h2>
+					<p class="font-['Karla'] text-lg text-white/90">
+						Od cyberbezpieczeństwa po automatyzację procesów - oferujemy kompleksowe rozwiązania IT,
+						które pomogą Twojej firmie osiągnąć sukces.
+					</p>
+				</div>
 				<div
 					class="group rounded-2xl bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
 				>
@@ -434,37 +440,8 @@
 			</div>
 		</div>
 	</section>
-	<section class="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 px-4 py-20">
-		<!-- Background decorative elements -->
-		<div class="absolute inset-0 overflow-hidden">
-			<div
-				class="bg-aquamarine/10 absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl"
-			></div>
-			<div
-				class="bg-delftblue/10 absolute -bottom-10 -left-10 h-32 w-32 rounded-full blur-2xl"
-			></div>
-		</div>
+	<OurServivesSection {cards}></OurServivesSection>
 
-		<!-- Call to Action -->
-		<div class="container relative z-10 mx-auto">
-			<div class="mx-auto max-w-4xl text-center">
-				<div
-					class="from-delftblue-600 via-delftblue-700 to-delftblue-900 overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-2xl md:p-12"
-				>
-					<h3 class="mb-6 text-3xl font-bold text-white md:text-4xl">
-						Gotowy na transformację cyfrową?
-					</h3>
-					<p class="mb-8 font-['Karla'] text-lg leading-relaxed text-white/90 md:text-xl">
-						Porozmawiaj z naszymi ekspertami i odkryj możliwości dla Twojej firmy. Razem stworzymy
-						bezpieczne i nowoczesne środowisko IT.
-					</p>
-					<button
-						class="from-aquamarine-600 to-aquamarine-700 text-shadow-lg hover:to-aquamarine-400 hover:from-aquamarine-500 transform rounded-lg bg-gradient-to-r px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:px-10 md:py-4"
-					>
-						Skontaktuj się z nami
-					</button>
-				</div>
-			</div>
-		</div>
-	</section>
+	<CallToActionSection />
 </main>
+<Footer />

@@ -2,7 +2,7 @@
 	<div class="container relative z-10 mx-auto text-white">
 		<div class="mb-6 grid grid-cols-2 gap-8 md:grid-cols-5 lg:grid-cols-6">
 			<div class="col-span-1 mb-8 md:col-span-2 lg:col-span-3 lg:mb-0">
-				<img src="/images/Logo_White_PNG.png" alt="Sequre Arc Logo" class="h-16 w-auto" />
+				<img src="/images/Logo_White_PNG.png" alt="Sequre Arc Logo" class="h-22 w-auto" />
 			</div>
 			<div class="col-span-1">
 				<h4 class="mb-6 text-lg font-semibold text-white">Sequre Arc</h4>
