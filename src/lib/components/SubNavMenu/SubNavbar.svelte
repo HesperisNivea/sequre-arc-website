@@ -4,6 +4,7 @@
 		items: Array<{
 			title: string | null;
 			description: string | null;
+			href?: string;
 		}>;
 	};
 
@@ -18,10 +19,10 @@
 	{/if}
 
 	<ul class="mt-3 text-[15px]">
-		{#each items as { title, description }}
+		{#each items as { title, description, href }}
 			<li>
 				<a
-					href="#"
+					href="{href || '#'}"
 					class="-mx-2 block rounded-lg p-2 font-semibold text-gray-800 transition duration-300 ease-in-out hover:bg-gradient-to-br hover:from-indigo-50 hover:via-blue-50 hover:to-pink-50 hover:text-indigo-600"
 				>
 					{title}

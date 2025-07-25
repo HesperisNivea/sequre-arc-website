@@ -1,9 +1,9 @@
 <script>
-	import CallToActionSection from './(app)/CallToActionSection.svelte';
-	import OurServivesSection from './(app)/OurServivesSection.svelte';
-	import TransparentButton from './TransparentButton.svelte';
+	import CallToActionSection from './CallToActionSection.svelte';
+	import OurServivesSection from './OurServivesSection.svelte';
+	import TransparentButton from '../lib/components/TransparentButton.svelte';
 	import { cards } from './(app)/util';
-	import Footer from './(app)/Footer.svelte';
+	import Footer from '../lib/components/Footer.svelte';
 
 	let buttons = [
 		{

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TransparentButton from '../../../routes/TransparentButton.svelte';
+	import TransparentButton from '../TransparentButton.svelte';
 	import SubNavbar from '../SubNavMenu/SubNavbar.svelte';
 	import NavbarLink from './NavbarLink.svelte';
 	import { onMount } from 'svelte';
@@ -89,14 +89,16 @@
 										items={[
 											{
 												title: 'Cyberbezpieczeństwo',
-												description: 'Zabezpieczamy swoje dane i systemy'
+												description: 'Zabezpieczamy swoje dane i systemy',
+												href: '/CyberSecurity'
 											},
 											{
 												title: 'Audyt',
-												description: 'Przeprowadzamy szczegółowy audyt bezpieczeństwa'
+												description: 'Przeprowadzamy szczegółowy audyt bezpieczeństwa',
+												href: '/audyt'
 											},
-											{ title: 'M365', description: 'Wprowadzamy M365' },
-											{ title: 'Google Workspace', description: 'Wprowadzamy Google Workspace' }
+											{ title: 'M365', description: 'Wprowadzamy M365', href: '/m365' },
+											{ title: 'Google Workspace', description: 'Wprowadzamy Google Workspace', href: '/GoogleWorkspace' }
 										]}
 									/>
 									<SubNavbar
@@ -116,7 +118,7 @@
 
 			<!-- Kontakt (Desktop) -->
 			<div class="hidden lg:block">
-				<TransparentButton title="Kontakt" size="small"></TransparentButton>
+				<TransparentButton title="Kontakt" href="/Contact" size="small"></TransparentButton>
 			</div>
 
 			<!-- Mobile Menu Button -->

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { OurServivesSectionCard } from './util';
+	import type { OurServivesSectionCard } from './(app)/util';
 
 	type Props = {
 		title?: string;

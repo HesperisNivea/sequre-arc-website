@@ -39,4 +39,22 @@
     --color-aquamarine-800: #136d3d;
     --color-aquamarine-900: #0b4125;
 
+      --color-icablue: #8cebe8ff;
+
+    --color-icablue-100: #f1fbfb;
+    --color-icablue-200: #dff7f6;
+    --color-icablue-300: #cdf2f2;
+    --color-icablue-400: #baeeed;
+    --color-icablue-500: #a8e9e8;
+    --color-icablue-600: #85b8b7;
+    --color-icablue-700: #618787;
+    --color-icablue-800: #3e5656;
+    --color-icablue-900: #1b2525;
+
+
+}
+
+/* Default font for paragraph elements */
+p {
+    font-family: "Karla", sans-serif;
 }
