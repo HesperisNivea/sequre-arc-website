@@ -130,7 +130,8 @@
 
 			<!-- Right side - CTA Button -->
 			<div class="flex justify-start">
-				<button
+				<a
+					href="/Contact"
 					class="bg-russianviolet hover:border-russianviolet hover:text-russianviolet hover:shadow-1xl group flex items-center gap-3 rounded-full px-8 py-4 font-['Karla'] text-lg font-[700] text-white shadow-xl transition-all duration-100 hover:border-2 hover:bg-white/60"
 				>
 					Skontaktuj się z nami
@@ -147,7 +148,7 @@
 							d="M17 8l4 4m0 0l-4 4m4-4H3"
 						/>
 					</svg>
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -5,8 +5,7 @@
     let error = $state(false);
     let loading = $state(false);
     let errors = $state<Record<string, string[]>>();
-
-    const { form } = $props<{ form: HTMLFormElement }>();
+    let success = $state(false);
 
 
     const handleSubmit = async ({}) => {
@@ -17,13 +16,14 @@
                 if(result.type === 'success') {
                     error = false;
                     loading = false;
+                    let form = document.getElementById('contact-form') as HTMLFormElement;
                     form.reset();
                     await invalidateAll();
-                    
+                    success = true;
                 } else if (result.type === 'failure') {
                     errors = result.data?.errors;
                     loading = false;
-                    error = true;
+                    error = false;
                 } else {
                     error = true;
                     loading = false;
@@ -60,9 +60,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
     <div class="relative z-1 container mx-auto px-4 py-8">
         <div class="bg-delftblue rounded-lg">
             </div>
-            <div class="bg-gray-100 px-8 py-11 rounded-lg shadow-2xl">
+            <div class="bg-gray-100 px-8 py-11 rounded-lg shadow-2xl max-w-[600px] ">
                 <h3 class="text-3xl text-center font-bold text-delftblue-700 mb-11">Wyślij nam wiadomość</h3>
-                <form id="contact-form" novalidate action="?/submitContact" use:enhance={handleSubmit} method="POST" class="space-y-4 ">
+                {#if success}
+                    <div class="bg-green-200 text-green-800 p-4 rounded-lg mb-4">
+                        <p class="text-lg font-semibold">Twoja wiadomość została wysłana pomyślnie!</p>
+                    </div>
+                {/if}
+                {#if error}
+                    <div class="bg-red-100 text-red-800 p-4 rounded-lg mb-4">
+                        <p class="text-lg font-semibold">Wystąpił błąd podczas wysyłania wiadomości. Proszę spróbować ponownie.</p>
+                    </div>
+                {/if}
+                <form id="contact-form" novalidate action="?/submitContact" use:enhance={handleSubmit} method="POST" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                         <div class="space-y-4">
                             <div>
@@ -105,6 +115,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                         class="w-full p-3 border-2 border-delftblue-200 rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all"
                     />
                     </div>
+                    <div class="h-4 mt-1"></div>
                    </div>
                     </div>
                    <div>
@@ -139,9 +150,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                     </p>
                 </form>
             </div>
-
-            
         </div>
-   
 </section>
 
