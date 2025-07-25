@@ -1,3 +1,39 @@
+<script lang="ts">
+    import { enhance, applyAction } from "$app/forms";
+    import { invalidateAll } from "$app/navigation";
+   
+    let error = $state(false);
+    let loading = $state(false);
+    let errors = $state<Record<string, string[]>>();
+
+    const { form } = $props<{ form: HTMLFormElement }>();
+
+
+    const handleSubmit = async ({}) => {
+        loading = true;
+        error = false;
+        errors = undefined;
+        return async ({ result }: { result: any }) => {
+                if(result.type === 'success') {
+                    error = false;
+                    loading = false;
+                    form.reset();
+                    await invalidateAll();
+                    
+                } else if (result.type === 'failure') {
+                    errors = result.data?.errors;
+                    loading = false;
+                    error = true;
+                } else {
+                    error = true;
+                    loading = false;
+                }
+                await applyAction(result);
+        }
+        
+    };
+
+</script>
 
 <section
 		class="relative max-h-[600px] bg-delftblue  bg-cover bg-center bg-no-repeat text-white"
@@ -26,7 +62,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
             </div>
             <div class="bg-gray-100 px-8 py-11 rounded-lg shadow-2xl">
                 <h3 class="text-3xl text-center font-bold text-delftblue-700 mb-11">Wyślij nam wiadomość</h3>
-                <form action="/submit-contact" method="POST" class="space-y-4">
+                <form id="contact-form" novalidate action="?/submitContact" use:enhance={handleSubmit} method="POST" class="space-y-4 ">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                         <div class="space-y-4">
                             <div>
@@ -35,9 +71,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                             type="text" 
                             name="name" 
                             placeholder="Podaj Imię i Nazwisko" 
-                            required 
-                            class="w-full p-3 border-2 border-delftblue-200 rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all" 
+                            class="w-full p-3 border-2 {errors?.name ? 'border-red-500' : 'border-delftblue-200'} rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all" 
                         />
+                        <div class="h-4 mt-1">
+                            {#if errors?.name}
+                                <p class="text-red-500 text-sm transition-opacity duration-200">{errors.name[0]}</p>
+                            {/if}
+                        </div>
                             </div>
                         <div>  
                             <label for="email" class="text-md font-semibold text-delftblue-700 py-2">Email <span class="text-red-500">*</span></label>
@@ -45,9 +85,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                         type="email" 
                         name="email" 
                         placeholder="Podaj swój email" 
-                        required 
-                        class="w-full p-3 border-2 border-delftblue-200 rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all" 
-                    /></div>
+                        class="w-full p-3 border-2 {errors?.email ? 'border-red-500' : 'border-delftblue-200'}  rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all" 
+                    />
+                    <div class="h-4 mt-1">
+                        {#if errors?.email}
+                            <p class="text-red-500 text-sm transition-opacity duration-200">{errors.email[0]}</p>
+                        {/if}
+                    </div>
+                    </div>
                    
                         </div>
                         <div class="space-y-4">
@@ -56,13 +101,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                         <input 
                         type="text" 
                         name="NIP" 
-                        placeholder="Podaj NIP twojej firmy" 
-                        required 
+                        placeholder="Podaj NIP twojej firmy"  
                         class="w-full p-3 border-2 border-delftblue-200 rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all"
                     />
                     </div>
-                    
-                     
                    </div>
                     </div>
                    <div>
@@ -70,15 +112,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices pellen
                      <textarea 
                         name="message" 
                         placeholder="Powiedz nam, jak możemy Ci pomóc?" 
-                        required 
                         rows="4"
-                        class="w-full p-3 border-2 border-delftblue-200 rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all"
+                        class="w-full p-3 border-2 {errors?.message ? 'border-red-500' : 'border-delftblue-200'} rounded-xl text-delftblue-800 bg-gray-100 focus:border-delftblue-500 focus:outline-none focus:ring-2 focus:ring-delftblue-200 transition-all"
                     ></textarea>
+                    <div class="h-4 mt-1">
+                        {#if errors?.message}
+                            <p class="text-red-500 text-sm transition-opacity duration-200">{errors.message[0]}</p>
+                        {/if}
                     </div>
-                   
+                    </div>
                     <button 
+                        form="contact-form"
                         type="submit" 
                         class="w-full bg-delftblue-700 text-white px-6 py-4 rounded-lg hover:bg-delftblue-600 focus:bg-delftblue-800 transition-colors font-semibold text-lg shadow-lg"
+                        disabled={loading}
                     >
                         Wyślij wiadomość
                     </button>
